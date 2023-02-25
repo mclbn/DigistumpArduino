@@ -221,6 +221,7 @@ section at the end of this file).
 
 /* -------------------------- Device Description --------------------------- */
 
+#ifndef USB_CFG_VENDOR_ID
 #define USB_CFG_VENDOR_ID 0xc0, 0x16
 /* USB vendor ID for the device, low byte first. If you have registered your
  * own Vendor ID, define it here. Otherwise you may use one of obdev's free
@@ -230,6 +231,9 @@ section at the end of this file).
  * with libusb: 0x16c0/0x5dc.  Use this VID/PID pair ONLY if you understand
  * the implications!
  */
+#endif // USB_CFG_VENDOR_ID
+
+#ifndef USB_CFG_DEVICE_ID
 #define USB_CFG_DEVICE_ID 0xda, 0x27
 /* This is the ID of the product, low byte first. It is interpreted in the
  * scope of the vendor ID. If you have registered your own VID with usb.org
@@ -241,6 +245,8 @@ section at the end of this file).
  * with libusb: 0x16c0/0x5dc.  Use this VID/PID pair ONLY if you understand
  * the implications!
  */
+#endif // USB_CFG_DEVICE_ID
+
 #define USB_CFG_DEVICE_VERSION  0x00, 0x01
 /* Version number of the device: Minor number first, then major number.
  */
